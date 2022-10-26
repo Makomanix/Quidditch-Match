@@ -1,54 +1,35 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { Button, Row, Col } from "bootstrap";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import CharacterPage from "./components/CharacterPage";
+// import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
       <h1>Quidditch Rumble</h1>
-      <Navbar 
-        <nav>
-          <ul>
-            <li></li> 
-          </ul>
-        </nav>
-      />
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/characterPage">Build Your Team!</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="characterPage" element={<CharacterPage />} />
       </Routes>
     </div>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-      <main>
-        <p>Are you ready to RUMBLE?</p>
-      </main>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-      <main>
-        <h1>About</h1>
-        <p>
-          This application is collection of Harry Potter characters that you can
-          create a Quidditch team with
-        </p>
-      </main>
-    </>
   );
 }
 
