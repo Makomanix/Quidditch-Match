@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Character from "./Character";
-import Container from "react-bootstrap/Container";
+
 
 function CharacterCollection({
     character,
@@ -9,8 +9,7 @@ function CharacterCollection({
     setSearchQuery,
 }) {
 
-    //const [characterIndex, setCharacterIndex] = useState(7);
-    // above is for a "show more button"
+
     const characterCards = character.map((character) => {
         return (
             <Character

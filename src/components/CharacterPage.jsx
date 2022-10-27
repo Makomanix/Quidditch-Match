@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
 import CharacterCollection from "./CharacterCollection";
 import CharacterForm from "./CharacterForm";
 import YourQuidditchTeam from "./YourQuidditchTeam";
@@ -39,24 +38,23 @@ function CharacterPage() {
     };
 
     return (
-        <Switch>
-            <Route exact path={["/characters"]}>
-                <CharacterCollection
-                    character={charactersToDisplay}
-                    searchQuery={searchQuery}
-                    onAddTeam={handleAddCharacter}
-                    setSearchQuery={setSearchQuery}
-                />
-                <YourQuidditchTeam
-                    character={yourTeam}
-                    onRemoveChar={handleRemoveCharacter}
-                />
-            </Route>
+        <>
+            <CharacterCollection
+                character={charactersToDisplay}
+                searchQuery={searchQuery}
+                onAddTeam={handleAddCharacter}
+                setSearchQuery={setSearchQuery}
+            />
+            <YourQuidditchTeam
+                character={yourTeam}
+                onRemoveChar={handleRemoveCharacter}
+            />
 
-            <Route path="/characters/new">
-                <CharacterForm onAddNewChar={onAddCharacter} />
-            </Route>
-        </Switch>
+
+
+            <CharacterForm onAddNewChar={onAddCharacter} />
+
+        </>
     );
 }
 export default CharacterPage;

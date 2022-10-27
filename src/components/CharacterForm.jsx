@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+
 
 const initialState = {
     name: "",
@@ -12,7 +12,6 @@ const initialState = {
 
 function CharacterForm({ onAddMovie }) {
     const [formData, setFormData] = useState(initialState);
-    const history = useHistory();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((formData) => ({ ...formData, [name]: value }));
@@ -34,7 +33,6 @@ function CharacterForm({ onAddMovie }) {
             .then((res) => res.json())
             .then((newCharacter) => {
                 onAddMovie(newCharacter);
-                history.push("/");
             });
     };
 
