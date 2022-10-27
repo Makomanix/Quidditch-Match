@@ -29,7 +29,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="characterPage" element={<CharacterPage />} />
-        <Route path="addPlayer" element={<CharacterForm />} />
       </Routes>
     </Container>
   );

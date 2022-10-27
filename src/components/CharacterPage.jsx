@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 import CharacterCollection from "./CharacterCollection";
 import CharacterForm from "./CharacterForm";
 import YourQuidditchTeam from "./YourQuidditchTeam";
@@ -7,6 +8,7 @@ function CharacterPage() {
     const [characters, setCharacters] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [yourTeam, setYourTeam] = useState([]);
+    const [showAddForm, setShowAddForm] = useState(false)
 
     useEffect(() => {
         fetch("http://localhost:6001/characters")
@@ -18,9 +20,9 @@ function CharacterPage() {
         setCharacters({ ...characters, newCharacter });
     };
 
-    const charactersToDisplay = characters.filter((character) =>
-        character.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // const charactersToDisplay = characters.filter((character) =>
+    //     character.name.toLowerCase().includes(searchQuery.toLowerCase())
+    // );
 
     const handleAddCharacter = (charToAdd) => {
         const characterInTeam = yourTeam.find(
@@ -36,25 +38,26 @@ function CharacterPage() {
             yourTeam.filter((characters) => characters.id !== characterToRemove.id)
         );
     };
-
+    console.log(characters)
     return (
         <>
+            <Button onClick={() => setShowAddForm(true)}>Add A New Character</Button>
+
+            {showAddForm && <CharacterForm setShowAddForm={setShowAddForm} onAddCharacter={onAddCharacter}
+            />}
             <CharacterCollection
-                character={charactersToDisplay}
+                characters={characters}
                 searchQuery={searchQuery}
                 onAddTeam={handleAddCharacter}
                 setSearchQuery={setSearchQuery}
+
             />
             <YourQuidditchTeam
                 character={yourTeam}
                 onRemoveChar={handleRemoveCharacter}
             />
-
-
-
-            {/* <CharacterForm onAddNewChar={onAddCharacter} /> */}
-
         </>
     );
 }
+
 export default CharacterPage;

@@ -4,14 +4,15 @@ import Character from "./Character";
 
 
 function CharacterCollection({
-    character,
+    characters,
     searchQuery,
     onAddTeam,
     setSearchQuery,
+    onAddCharacter
 }) {
 
 
-    const characterCards = character.map((character) => {
+    const characterCards = characters.map((character) => {
         return (
             <Character
                 key={character.id}
@@ -25,7 +26,7 @@ function CharacterCollection({
     const handleOnChange = (e) => setSearchQuery(e.target.value);
 
     return (
-        <Container>
+        <Container flexbox>
             <Row>
                 <div>
                     <input

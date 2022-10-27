@@ -11,30 +11,25 @@ const initialState = {
     image: "",
 };
 
-function CharacterForm({ onAddMovie }) {
+function CharacterForm({ onAddCharacter, setShowAddForm }) {
     const [formData, setFormData] = useState(initialState);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((formData) => ({ ...formData, [name]: value }));
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        let newCharacter = {
-            name: formData.name,
-            house: formData.house,
-            ancestry: formData.ancestry,
-            image: formData.image,
-        };
+
         fetch("http://localhost:6001/characters", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newCharacter),
+            body: JSON.stringify(formData),
         })
             .then((res) => res.json())
-            .then((newCharacter) => {
-                onAddMovie(newCharacter);
-            });
+            .then(data => onAddCharacter(data))
+        setShowAddForm(false)
     };
 
     return (
@@ -59,21 +54,30 @@ function CharacterForm({ onAddMovie }) {
                             />
                         </Col>
                         <Col>
-                            <DropdownButton
+                            <label for="house">House &nbsp;</label>
+
+                            <select name="house" id="house" onChange={handleChange}>
+                                <option value="">Select House</option>
+                                <option value="Ravenclaw">Ravenclaw</option>
+                                <option value="saab">Saab</option>
+                                <option value="mercedes">Mercedes</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            {/* <DropdownButton
                                 className="Select House"
                                 type="select"
                                 id="house"
                                 name="house"
                                 placeholder="Select House"
-                                onChange={handleChange}
+                                onChange={handleDropdown}
                                 value={formData.house}
                                 title="House"
-                            >
-                                <Dropdown.Item as="button">Ravenclaw</Dropdown.Item>
+                            > */}
+                            {/* <Dropdown.Item as="button" value='Ravenclaw'>Ravenclaw</Dropdown.Item>
                                 <Dropdown.Item as="button">Hufflepuff</Dropdown.Item>
                                 <Dropdown.Item as="button">Syltherin</Dropdown.Item>
                                 <Dropdown.Item as="button">Gryffindor</Dropdown.Item>
-                            </DropdownButton>
+                            </DropdownButton> */}
                             <br />
 
                         </Col>
