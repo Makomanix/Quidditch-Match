@@ -9,7 +9,7 @@ function CharacterPage() {
     const [yourTeam, setYourTeam] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:6001/characters?_sort=name&_order=desc")
+        fetch("http://localhost:6001/characters")
             .then((res) => res.json())
             .then((characters) => setCharacters(characters));
     }, []);
@@ -52,7 +52,7 @@ function CharacterPage() {
 
 
 
-            <CharacterForm onAddNewChar={onAddCharacter} />
+            {/* <CharacterForm onAddNewChar={onAddCharacter} /> */}
 
         </>
     );

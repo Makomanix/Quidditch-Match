@@ -25,11 +25,11 @@ function YourQudditchTeam({ character, onRemoveChar }) {
         <div>
             <div>{characterCards}</div>
             <div>
-                <input
+                {/* <input
                     type="text"
-                    placeholder="search for character"
-                    onChange={handleOnChange}
-                ></input>
+                    // placeholder="search for character"
+
+                ></input> */}
             </div>
         </div>
     );

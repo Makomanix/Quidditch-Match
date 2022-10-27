@@ -14,31 +14,22 @@ import About from "./components/About";
 import CharacterPage from "./components/CharacterPage";
 import CharacterForm from "./components/CharacterForm";
 import CharacterCollection from "./components/CharacterCollection";
+import TopNav from "./components/TopNav";
 
 function App() {
   return (
     <Container className="App">
-      <Navbar className="fluid" bg="success" expand="md" variant="light">
+      <Navbar className="fluid" bg="success" expand="sm" variant="light">
         <h1>Quidditch Rumble</h1>
         <Row>
-          <ButtonGroup aria-label="Basic example">
-            <Button variant="secondary">
-              <Link to="/">Home</Link>
-            </Button>
-            <Button variant="secondary">
-              <Link to="/characterPage">Build Your Team!</Link>
-            </Button>
-            <Button variant="secondary">
-              <Link to="/about">About</Link>
-            </Button>
-          </ButtonGroup>
+          <TopNav />
         </Row>
       </Navbar>
-      <CharacterForm />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="characterPage" element={<CharacterPage />} />
+        <Route path="addPlayer" element={<CharacterForm />} />
       </Routes>
     </Container>
   );

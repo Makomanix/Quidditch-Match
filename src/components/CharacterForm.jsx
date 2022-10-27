@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Form, Container, Row, Col } from "react-bootstrap";
+import { Button, Form, Container, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+
 
 
 const initialState = {
@@ -58,16 +59,23 @@ function CharacterForm({ onAddMovie }) {
                             />
                         </Col>
                         <Col>
-                            <Form.Label htmlFor="house">House</Form.Label>
-                            <Form.Control
-                                className=""
-                                type="date"
+                            <DropdownButton
+                                className="Select House"
+                                type="select"
                                 id="house"
                                 name="house"
-                                placeholder="Your House"
+                                placeholder="Select House"
                                 onChange={handleChange}
                                 value={formData.house}
-                            />
+                                title="House"
+                            >
+                                <Dropdown.Item as="button">Ravenclaw</Dropdown.Item>
+                                <Dropdown.Item as="button">Hufflepuff</Dropdown.Item>
+                                <Dropdown.Item as="button">Syltherin</Dropdown.Item>
+                                <Dropdown.Item as="button">Gryffindor</Dropdown.Item>
+                            </DropdownButton>
+                            <br />
+
                         </Col>
                     </Row>
 
@@ -101,8 +109,10 @@ function CharacterForm({ onAddMovie }) {
                 </Form.Group>
             </Form>
 
-        </Container>
+        </Container >
     );
 }
 
 export default CharacterForm;
+
+

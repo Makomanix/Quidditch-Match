@@ -1,4 +1,5 @@
 // import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Character from "./Character";
 
 
@@ -24,17 +25,19 @@ function CharacterCollection({
     const handleOnChange = (e) => setSearchQuery(e.target.value);
 
     return (
-        <div>
+        <Container>
+            <Row>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="search for character"
+                        onChange={handleOnChange}
+                        value={searchQuery}
+                    ></input>
+                </div>
+            </Row>
             <div>{characterCards}</div>
-            <div>
-                <input
-                    type="text"
-                    placeholder="search for character"
-                    onChange={handleOnChange}
-                    value={searchQuery}
-                ></input>
-            </div>
-        </div>
+        </Container>
     );
 }
 export default CharacterCollection;
