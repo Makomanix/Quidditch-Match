@@ -12,7 +12,6 @@ function CharacterCollection({
 
     const characterCards = characters.map((character) => {
         return (
-            
                 <Character
                     key={character.id}
                     id={character.id}
@@ -26,7 +25,6 @@ function CharacterCollection({
 
     return (
         <Container >
-            <Row>
                 <div>
                     <input
                         type="text"
@@ -35,7 +33,6 @@ function CharacterCollection({
                         value={searchQuery}
                     ></input>
                 </div>
-            </Row>
             <div>{characterCards}</div>
         </Container>
     );

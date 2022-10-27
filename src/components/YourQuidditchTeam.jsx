@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 import Character from './Character';
 
-function YourQudditchTeam({ character, onRemoveChar }) {
+function YourQudditchTeam({ character, onRemoveTeam }) {
     if (character === []) {
         return null;
     }
@@ -13,7 +13,7 @@ function YourQudditchTeam({ character, onRemoveChar }) {
                 key={character.id}
                 id={character.id}
                 character={character}
-                onCharClick={onRemoveChar}
+                onCharClick={onRemoveTeam}
             />
         );
     });

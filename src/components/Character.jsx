@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Character({ id, character, onCharClick }) {
     const { name, house, ancestry, image } = character;
@@ -7,9 +7,8 @@ function Character({ id, character, onCharClick }) {
         onCharClick(character)
     }
 
-
     return (
-        <div>
+        <div onClick={handleClick}>
             <div>
                 <img src={image} alt={name} />
             </div>
@@ -22,7 +21,6 @@ function Character({ id, character, onCharClick }) {
             <div>
                 {ancestry}
             </div>
-            <button onClick={handleClick}></button>
         </div>
     )
 }
