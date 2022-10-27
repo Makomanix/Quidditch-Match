@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Button, Form, Container, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+import { Button, Form, Container, Row, Col } from "react-bootstrap";
 
 
 
@@ -58,26 +58,12 @@ function CharacterForm({ onAddCharacter, setShowAddForm }) {
 
                             <select name="house" id="house" onChange={handleChange}>
                                 <option value="">Select House</option>
+                                <option value="Gryffindor">Gryffindor</option>
                                 <option value="Ravenclaw">Ravenclaw</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                <option value="Hufflepuff">Hufflepuff</option>
+                                <option value="Slytherin">Slytherin</option>
                             </select>
-                            {/* <DropdownButton
-                                className="Select House"
-                                type="select"
-                                id="house"
-                                name="house"
-                                placeholder="Select House"
-                                onChange={handleDropdown}
-                                value={formData.house}
-                                title="House"
-                            > */}
-                            {/* <Dropdown.Item as="button" value='Ravenclaw'>Ravenclaw</Dropdown.Item>
-                                <Dropdown.Item as="button">Hufflepuff</Dropdown.Item>
-                                <Dropdown.Item as="button">Syltherin</Dropdown.Item>
-                                <Dropdown.Item as="button">Gryffindor</Dropdown.Item>
-                            </DropdownButton> */}
+
                             <br />
 
                         </Col>
@@ -107,7 +93,7 @@ function CharacterForm({ onAddCharacter, setShowAddForm }) {
                         onChange={handleChange}
                         value={formData.ancestry}
                     />
-                    <Button type="submit" class="my-3">
+                    <Button type="submit" className="my-3">
                         Add Character
                     </Button>
                 </Form.Group>

@@ -1,26 +1,21 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   Container,
-  Button,
   Row,
-  Col,
   Navbar,
-  ButtonGroup,
 } from "react-bootstrap";
 import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import CharacterPage from "./components/CharacterPage";
-import CharacterForm from "./components/CharacterForm";
-import CharacterCollection from "./components/CharacterCollection";
 import TopNav from "./components/TopNav";
 
 function App() {
   return (
     <Container className="App">
-      <Navbar className="fluid" bg="success" expand="sm" variant="light">
         <h1>Quidditch Rumble</h1>
+      <Navbar className="fluid" bg="success" expand="sm" variant="light">
         <Row>
           <TopNav />
         </Row>

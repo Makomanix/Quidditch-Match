@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Container } from 'react-bootstrap';
 import Character from './Character';
 
 function YourQudditchTeam({ character, onRemoveChar }) {
@@ -22,16 +23,11 @@ function YourQudditchTeam({ character, onRemoveChar }) {
 
 
     return (
-        <div>
-            <div>{characterCards}</div>
-            <div>
-                {/* <input
-                    type="text"
-                    // placeholder="search for character"
-
-                ></input> */}
-            </div>
-        </div>
+        <Container fluid="md">
+            <Row>
+                <div>{characterCards}</div>
+            </Row>
+        </Container>
     );
 }
 export default YourQudditchTeam;

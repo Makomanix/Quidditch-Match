@@ -17,12 +17,12 @@ function CharacterPage() {
     }, []);
 
     const onAddCharacter = (newCharacter) => {
-        setCharacters({ ...characters, newCharacter });
+        setCharacters([...characters, newCharacter]);
     };
 
-    // const charactersToDisplay = characters.filter((character) =>
-    //     character.name.toLowerCase().includes(searchQuery.toLowerCase())
-    // );
+    const charactersToDisplay = characters.filter((character) =>
+        character.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     const handleAddCharacter = (charToAdd) => {
         const characterInTeam = yourTeam.find(
@@ -45,16 +45,16 @@ function CharacterPage() {
 
             {showAddForm && <CharacterForm setShowAddForm={setShowAddForm} onAddCharacter={onAddCharacter}
             />}
+            <YourQuidditchTeam
+                character={yourTeam}
+                onRemoveChar={handleRemoveCharacter}
+            />
             <CharacterCollection
-                characters={characters}
+                characters={charactersToDisplay}
                 searchQuery={searchQuery}
                 onAddTeam={handleAddCharacter}
                 setSearchQuery={setSearchQuery}
 
-            />
-            <YourQuidditchTeam
-                character={yourTeam}
-                onRemoveChar={handleRemoveCharacter}
             />
         </>
     );

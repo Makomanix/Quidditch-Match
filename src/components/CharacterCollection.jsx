@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Character from "./Character";
 
@@ -8,25 +7,25 @@ function CharacterCollection({
     searchQuery,
     onAddTeam,
     setSearchQuery,
-    onAddCharacter
 }) {
 
 
     const characterCards = characters.map((character) => {
         return (
-            <Character
-                key={character.id}
-                id={character.id}
-                character={character}
-                onCharClick={onAddTeam}
-            />
+            
+                <Character
+                    key={character.id}
+                    id={character.id}
+                    character={character}
+                    onCharClick={onAddTeam}
+                />
         );
     });
 
     const handleOnChange = (e) => setSearchQuery(e.target.value);
 
     return (
-        <Container flexbox>
+        <Container >
             <Row>
                 <div>
                     <input
