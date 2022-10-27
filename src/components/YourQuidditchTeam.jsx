@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Col } from 'react-bootstrap';
 import Character from './Character';
 
 function YourQudditchTeam({ character, onRemoveTeam }) {
@@ -22,9 +22,9 @@ function YourQudditchTeam({ character, onRemoveTeam }) {
 
     return (
         <Container fluid="md">
-            <Row>
+            <Col>
                 <div>{characterCards}</div>
-            </Row>
+            </Col>
         </Container>
     );
 }
