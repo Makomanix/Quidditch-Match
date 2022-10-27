@@ -25,7 +25,7 @@ function CharacterPage() {
 
     const handleAddCharacter = (charToAdd) => {
         const characterInTeam = yourTeam.find(
-            (characters) => characters.id === charactersToAdd.id
+            (characters) => characters.id === charToAdd.id
         );
         if (!characterInTeam) {
             setYourTeam([...yourTeam, charToAdd]);

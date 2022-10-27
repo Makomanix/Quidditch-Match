@@ -3,39 +3,39 @@ import Character from "./Character";
 import Container from "react-bootstrap/Container";
 
 function CharacterCollection({
-  character,
-  searchQuery,
-  onAddTeam,
-  setSearchQuery,
+    character,
+    searchQuery,
+    onAddTeam,
+    setSearchQuery,
 }) {
 
-  //const [characterIndex, setCharacterIndex] = useState(7);
-  // above is for a "show more button"
-  const characterCards = character.map((character) => {
-    return ( 
-      <Character 
-        key={character.id}
-        id={character.id} 
-        character={character}
-        onCharClick={onAddTeam} 
-      />
-      );
+    //const [characterIndex, setCharacterIndex] = useState(7);
+    // above is for a "show more button"
+    const characterCards = character.map((character) => {
+        return (
+            <Character
+                key={character.id}
+                id={character.id}
+                character={character}
+                onCharClick={onAddTeam}
+            />
+        );
     });
 
-  const handleOnChange = (e) => setSearchQuery(e.target.value);
+    const handleOnChange = (e) => setSearchQuery(e.target.value);
 
-  return (
-    <div>
-        <div>{characterCards}</div>
+    return (
         <div>
-            <input 
-              type="text"
-              placeholder="search for character"
-              onChange={handleOnChange}
-              value={searchQuery} 
-            ></input>
+            <div>{characterCards}</div>
+            <div>
+                <input
+                    type="text"
+                    placeholder="search for character"
+                    onChange={handleOnChange}
+                    value={searchQuery}
+                ></input>
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 export default CharacterCollection;
