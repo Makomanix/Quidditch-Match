@@ -5,7 +5,7 @@ function Home() {
     return (
         <>
         <main>
-            <p>Are you ready to RUMBLE?</p>
+            <h1>Are you ready to RUMBLE?</h1>
         </main>
         </>
     );
