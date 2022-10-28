@@ -12,28 +12,30 @@ function CharacterCollection({
 
     const characterCards = characters.map((character) => {
         return (
-                <Character
-                    key={character.id}
-                    id={character.id}
-                    character={character}
-                    onCharClick={onAddTeam}
-                />
+            <Character
+                key={character.id}
+                id={character.id}
+                character={character}
+                onCharClick={onAddTeam}
+            />
         );
     });
 
     const handleOnChange = (e) => setSearchQuery(e.target.value);
 
     return (
-        <Container >
-                <div>
-                    <input
-                        type="text"
-                        placeholder="search for character"
-                        onChange={handleOnChange}
-                        value={searchQuery}
-                    ></input>
-                </div>
-            <div>{characterCards}</div>
+        <Container>
+            <div>
+                <input
+                    type="text"
+                    placeholder="search for character"
+                    onChange={handleOnChange}
+                    value={searchQuery}
+                ></input>
+            </div>
+            <div>
+                {characterCards}
+            </div>
         </Container>
     );
 }

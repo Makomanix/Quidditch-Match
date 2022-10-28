@@ -9,6 +9,7 @@ function YourQudditchTeam({ character, onRemoveTeam }) {
 
     const characterCards = character.map((character) => {
         return (
+            
             <Character
                 key={character.id}
                 id={character.id}

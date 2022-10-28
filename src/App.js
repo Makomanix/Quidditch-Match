@@ -1,25 +1,18 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Navbar,
-} from "react-bootstrap";
+import { Container, Row, Navbar, Col } from "react-bootstrap";
 import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import CharacterPage from "./components/CharacterPage";
 import TopNav from "./components/TopNav";
 
+
 function App() {
   return (
     <Container className="App">
-        <h1>Quidditch Rumble</h1>
-      <Navbar className="fluid" bg="success" expand="sm" variant="light">
-        <Row>
-          <TopNav />
-        </Row>
-      </Navbar>
+      <h1>Quidditch Rumble</h1>
+      <TopNav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />

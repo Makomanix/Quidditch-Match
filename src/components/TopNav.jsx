@@ -2,23 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
     Button,
-    ButtonGroup,
-    Container
+    Container,
+    Row,
+    Col
 } from "react-bootstrap";
 
 
 function TopNav() {
     return (
-        <Container className="text-center">
-            <Button className="text-center" variant="secondary">
-                <Link to="/">Home</Link>
-            </Button>
-            <Button className="text-center" variant="secondary">
-                <Link to="/characterPage">Build Your Team!</Link>
-            </Button>
-            <Button className="text-center" variant="secondary">
-                <Link to="/about">About</Link>
-            </Button>
+        <Container className='fluid'>
+            <Row >
+                <Col >
+                    <Button className="text-primary" variant="primary">
+                        <Link className="link-light" to="/">Home</Link>
+                    </Button>
+                </Col>
+                <Col >
+                    <Button className="text-center" variant="primary">
+                        <Link className="link-light" to="/characterPage">Build Your Team!</Link>
+                    </Button>
+                </Col>
+                <Col>
+                    <Button className="text-center" variant="primary">
+                        <Link className="link-light" to="/about">About</Link>
+                    </Button>
+                </Col>
+            </Row>
         </Container>
     );
 }

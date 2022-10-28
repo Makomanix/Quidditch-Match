@@ -37,9 +37,9 @@ function CharacterForm({ onAddCharacter, setShowAddForm }) {
             padding: "20%, 20%",
             marginBottom: "2rem",
             marginTop: "10%",
-          }}
-        
-        className="my-3">
+        }}
+
+            className="my-3">
             <Form
                 className="form border rounded  "
                 autoComplete="off"

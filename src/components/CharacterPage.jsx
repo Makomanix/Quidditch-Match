@@ -41,6 +41,7 @@ function CharacterPage() {
     console.log(characters)
     return (
         <>
+            <br />
             <Button onClick={() => setShowAddForm(true)}>Add A New Character</Button>
 
             {showAddForm && <CharacterForm setShowAddForm={setShowAddForm} onAddCharacter={onAddCharacter}
