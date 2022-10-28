@@ -11,7 +11,7 @@ function Character({ id, character, onCharClick }) {
     return (
         <Container>
             <Row>
-                <Card onClick={handleClick} style={{ width: "18rem" }}>
+                <Card onClick={handleClick} style={{ width: "18rem" }} >
                     <Card.Img variant="top" src={image} />
                     <Card.Body>
                         <Card.Title style={{ fontWeight: "bold" }}>{name}</Card.Title>
