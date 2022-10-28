@@ -1,28 +1,23 @@
-import React, {useState} from "react";
+import React from "react";
+import { Card } from "react-bootstrap";
 
 function Character({ id, character, onCharClick }) {
-    const { name, house, ancestry, image } = character;
+  const { name, house, ancestry, image } = character;
 
-    const handleClick = () => {
-        onCharClick(character)
-    }
+  const handleClick = () => {
+    onCharClick(character);
+  };
 
-    return (
-        <div onClick={handleClick}>
-            <div>
-                <img src={image} alt={name} />
-            </div>
-            <div className="header">
-                {name}
-            </div>
-            <div>
-                {house}
-            </div>
-            <div>
-                {ancestry}
-            </div>
-        </div>
-    )
+  return (
+    <Card onClick={handleClick} style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+        <Card.Title style={{ fontWeight: "bold" }}>{name}</Card.Title>
+        <Card.Title>{house}</Card.Title>
+        <Card.Text>{ancestry}</Card.Text>
+      </Card.Body>
+    </Card>
+  );
 }
 
 export default Character;
